@@ -47,6 +47,7 @@ typeset -U path cdpath fpath manpath
 path=(
     $HOME/bin(N-/)
     $HOME/.rbenv/bin(N-/)
+    $HOME/.pyenv/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
     $path
@@ -112,3 +113,7 @@ function title {
 
 # rbenv init
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# pyenv init
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# pyenv-virtualenv init
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
