@@ -1,6 +1,12 @@
 "COMMON -----
 set background=light
 
+"tab setting
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
 
 "FILE -----
 set autoread
