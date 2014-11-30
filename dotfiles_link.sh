@@ -34,5 +34,6 @@ if [ $# -gt 0 ]; then
 
         brew cask install java
         brew cask install eclipse-java
+        brew cask install iterm2
     fi
 fi
