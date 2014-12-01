@@ -1,4 +1,6 @@
 ## env setting ##
+
+SHELL=/usr/local/bin/zsh
 # vim key bind
 bindkey -v
 

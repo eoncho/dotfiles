@@ -43,8 +43,8 @@ if [ $# -gt 0 ]; then
     brew cask install chefdk
   fi
 fi
-if [ which vagrant > /dev/null ]; then
-  if [ ! -d ~/Vagrant/CentOS64 ]; then
+if which vagrant > /dev/null ; then
+  if [ ! -e ~/Vagrant/CentOS64 ]; then
     vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
     mkdir -p ~/Vagrant/CentOS64
     cd ~/Vagrant/CentOS64
