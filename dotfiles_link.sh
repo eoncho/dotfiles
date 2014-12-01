@@ -40,6 +40,7 @@ if [ $# -gt 0 ]; then
     brew cask install vagrant
     brew cask install virtualbox
     brew cask install karabiner
+    brew cask install chefdk
   fi
 fi
 if [ which vagrant > /dev/null ]; then
@@ -47,6 +48,16 @@ if [ which vagrant > /dev/null ]; then
     vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
     mkdir -p ~/Vagrant/CentOS64
     cd ~/Vagrant/CentOS64
-    vagrant init
+    ln -sf ~/my_git/dotfiles/Vagrantfile ~/Vagrant/CentOS64/Vagrantfile
+    ln -sf ~/my_git/dotfiles/Berksfile ~/Vagrant/CentOS64/Berksfile
+    vagrant plugin install vagrant-omnibus
+    vagrant plugin install vagrant-berkshelf
+
+    if [ -d ~/Vagrant/CentOS64/site-cookbooks ]; then
+      mkdir ~/Vagrant/CentOS64/site-cookbooks
+      cd ~/Vagrant/CentOS64/site-cookbooks
+      berks cookbook rbenv-ruby
+      cat ~/my_git/dotfiles/rbenv-ruby_default.rb >> ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby/recipes/defauld.rb
+    fi
   fi
 fi
