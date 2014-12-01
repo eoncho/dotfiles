@@ -39,6 +39,7 @@ if [ $# -gt 0 ]; then
     brew cask install sequel-pro
     brew cask install vagrant
     brew cask install virtualbox
+    brew cask install karabiner
   fi
 fi
 if [ which vagrant > /dev/null ]; then
