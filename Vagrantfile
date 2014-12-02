@@ -19,11 +19,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+   config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+   config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -79,9 +79,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   puppet.manifests_path = "manifests"
   #   puppet.manifest_file  = "default.pp"
   # end
-  config.omnibus.chef_version = :latest
-  config.berkshelf.enabled = true
-  config.berkshelf.berksfile_path = "~/Vagrant/CentOS64/Berksfile"
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
@@ -97,7 +94,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        "git::source",
        "rbenv-ruby",
        "mysql::client",
-       "mysql::server"
+       "mysql::server",
+       "apache2",
+       "vim"
      ]
      # You may also specify custom JSON attributes:
      chef.json = { 
@@ -109,10 +108,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          server_root_password: "lemonmelon",
          server_repl_password: "lemonmelon",
          server_debian_password: "lemonmelon"
+       },
+       apache: {
+         version: "2.2.27",
+         default_site_enabled: true
        }
      }
    end
 
+  config.omnibus.chef_version = :latest
+  config.berkshelf.enabled = true
+  config.berkshelf.berksfile_path = "~/Vagrant/CentOS64/Berksfile"
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
