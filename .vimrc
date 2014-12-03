@@ -23,6 +23,8 @@ set incsearch
 map <C-S-l> gt
 map <C-S-h> gT
 
+imap <C-j> <esc>
+
 "PLUGIN SET UP
 if has('vim_starting')
     set nocompatible

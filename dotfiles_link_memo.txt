@@ -1,0 +1,6 @@
+berks cookbook rbenv-ruby ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby
+cp -f ~/my_git/dotfiles/rbenv-ruby_default.rb ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby/recipes/default.rb
+
+berks cookbook site_httpd ~/Vagrant/CentOS64/site-cookbooks/site_httpd
+cp -f ~/my_git/dotfiles/site_httpd_default.rb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/recipes/default.rb
+cp ~/my_git/dotfiles/local_ei-front.conf.erb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/recipes/ei-front.conf.erb

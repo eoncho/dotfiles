@@ -98,7 +98,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        "rbenv-ruby",
        "mysql::client",
        "mysql::server",
-       "apache2",
+       "site_httpd",
        "vim"
      ]
 
@@ -145,16 +145,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          server_root_password: "lemonmelon",
          server_repl_password: "lemonmelon",
          server_debian_password: "lemonmelon"
-       },
-       apache: {
-         version: "2.2",
-         timeout: 60,
-         default_site_enabled: true,
-         keepalive: "off",
-         keepalivetimeout: 15,
-         default_moduls: ["mod_log_config"]
        }
-     }
+    }
   end
 
   config.omnibus.chef_version = :latest

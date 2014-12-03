@@ -1,0 +1,1 @@
+cp -f ~/my_git/dotfiles/rbenv-ruby_default.rb site-cookbooks/rbenv-ruby/recipes/default.rb
