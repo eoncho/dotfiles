@@ -19,11 +19,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-   config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-   config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -44,12 +44,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
  
-   config.vm.provider "virtualbox" do |vb|
-     # Don't boot with headless mode
-     vb.gui = false 
-     # Use VBoxManage to customize the VM. For example to change memory:
-     vb.customize ["modifyvm", :id, "--memory", "1024"]
-   end
+  config.vm.provider "virtualbox" do |vb|
+    # Don't boot with headless mode
+    vb.gui = false 
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
@@ -84,13 +84,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-   config.vm.provision "chef_solo" do |chef|
+  config.vm.provision "chef_solo" do |chef|
   #   chef.cookbooks_path = "../my-recipes/cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
   #   chef.add_recipe "mysql"
   #   chef.add_role "web"
-     chef.run_list = [
+    chef.run_list = [
+       "sudo",
+       "openssh",
+       "easy-iptables",
        "git::source",
        "rbenv-ruby",
        "mysql::client",
@@ -98,8 +101,42 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        "apache2",
        "vim"
      ]
+
      # You may also specify custom JSON attributes:
      chef.json = { 
+       authorization: {
+         sudo: {
+           users: ["vagrant"],
+           passwordless: true
+         }
+       },
+       openssh: {
+         server: {
+           permit_root_login: "no"
+         }
+       },
+       "easy-iptables" => {
+         tables: [
+           {
+              name: "filter",
+              policies: [
+                ":INPUT ACCEPT [0:0]",
+                ":FORWARD ACCEPT [0:0]",
+                ":OUTPUT ACCEPT [0:0]"
+              ],
+              rules: [
+                "-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT",
+                "-A INPUT -p icmp -j ACCEPT",
+                "-A INPUT -i lo -j ACCEPT",
+                "-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT",
+                "-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT",
+                "-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT",
+                "-A INPUT -j REJECT --reject-with icmp-host-prohibited",
+                "-A FORWARD -j REJECT --reject-with icmp-host-prohibited"
+              ]
+           }
+         ]
+       },
        git: {
          version: "1.8.3.1"
        },
@@ -110,15 +147,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          server_debian_password: "lemonmelon"
        },
        apache: {
-         version: "2.2.27",
-         default_site_enabled: true
+         version: "2.2",
+         timeout: 60,
+         default_site_enabled: true,
+         keepalive: "off",
+         keepalivetimeout: 15,
+         default_moduls: ["mod_log_config"]
        }
      }
-   end
+  end
 
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
   config.berkshelf.berksfile_path = "~/Vagrant/CentOS64/Berksfile"
+  
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
