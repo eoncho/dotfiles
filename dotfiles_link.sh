@@ -47,7 +47,8 @@ if which vagrant > /dev/null ; then
   if ! vagrant box list | grep centos64 > /dev/null; then
     vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
   fi
-  if [ ! -e ~/Vagrant/CentOS64 ]; then
+  if [ -e ~/Vagrant/CentOS64 ]; then
+    rm -rf ~/Vagrant
     mkdir -p ~/Vagrant/CentOS64
     cd ~/Vagrant/CentOS64
     ln -sf ~/my_git/dotfiles/Vagrantfile ~/Vagrant/CentOS64/Vagrantfile
@@ -61,9 +62,12 @@ if which vagrant > /dev/null ; then
 
     if [ ! -d ~/Vagrant/CentOS64/site-cookbooks ]; then
       mkdir ~/Vagrant/CentOS64/site-cookbooks
-      cd ~/Vagrant/CentOS64/site-cookbooks
-      berks cookbook rbenv-ruby > /dev/null
-      cat ~/my_git/dotfiles/rbenv-ruby_default.rb >> ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby/recipes/default.rb
+      berks cookbook rbenv-ruby ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby > /dev/null
+      cp -f ~/my_git/dotfiles/rbenv-ruby_default.rb ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby/recipes/default.rb
+      berks cookbook site_httpd ~/Vagrant/CentOS64/site-cookbooks/site_httpd > /dev/null
+      cp -f ~/my_git/dotfiles/site_httpd_default.rb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/recipes/default.rb
+      cp -f ~/my_git/dotfiles/local_ei-front.conf.erb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/templates/ei-front.conf.erb
+      cp -f ~/my_git/dotfiles/httpd.conf.erb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/templates/httpd.conf.erb
     fi
   fi
 fi
