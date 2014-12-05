@@ -43,31 +43,18 @@ if [ $# -gt 0 ]; then
     brew cask install chefdk
   fi
 fi
+if ! rbenv versions | grep 2.1.0 > /dev/null; then
+  rbenv install 2.1.0
+  rbenv global 2.1.0
+fi
 if which vagrant > /dev/null ; then
   if ! vagrant box list | grep centos64 > /dev/null; then
     vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
   fi
-  if [ -e ~/Vagrant/CentOS64 ]; then
-    rm -rf ~/Vagrant
-    mkdir -p ~/Vagrant/CentOS64
-    cd ~/Vagrant/CentOS64
-    ln -sf ~/my_git/dotfiles/Vagrantfile ~/Vagrant/CentOS64/Vagrantfile
-    ln -sf ~/my_git/dotfiles/Berksfile ~/Vagrant/CentOS64/Berksfile
-    if ! vagrant plugin list | grep vagrant-omnibus > /dev/null; then
-      vagrant plugin install vagrant-omnibus
-    fi
-    if ! vagrant plugin list | grep vagrant-berkshelf > /dev/null; then
-      vagrant plugin install vagrant-berkshelf
-    fi
-
-    if [ ! -d ~/Vagrant/CentOS64/site-cookbooks ]; then
-      mkdir ~/Vagrant/CentOS64/site-cookbooks
-      berks cookbook rbenv-ruby ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby > /dev/null
-      cp -f ~/my_git/dotfiles/rbenv-ruby_default.rb ~/Vagrant/CentOS64/site-cookbooks/rbenv-ruby/recipes/default.rb
-      berks cookbook site_httpd ~/Vagrant/CentOS64/site-cookbooks/site_httpd > /dev/null
-      cp -f ~/my_git/dotfiles/site_httpd_default.rb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/recipes/default.rb
-      cp -f ~/my_git/dotfiles/local_ei-front.conf.erb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/templates/ei-front.conf.erb
-      cp -f ~/my_git/dotfiles/httpd.conf.erb ~/Vagrant/CentOS64/site-cookbooks/site_httpd/templates/httpd.conf.erb
-    fi
+  if ! vagrant plugin list | grep vagrant-omnibus > /dev/null; then
+    vagrant plugin install vagrant-omnibus
+  fi
+  if ! vagrant plugin list | grep vagrant-berkshelf > /dev/null; then
+    vagrant plugin install vagrant-berkshelf
   fi
 fi
