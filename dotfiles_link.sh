@@ -31,6 +31,8 @@ if [ $# -gt 0 ]; then
    	brew install tmux
     brew install zsh
     brew install zsh-completions
+    brew install mongodb
+    brew install wget
 
     brew cask install java
     brew cask install eclipse-java
