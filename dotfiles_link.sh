@@ -33,6 +33,11 @@ if [ $# -gt 0 ]; then
     brew install zsh-completions
     brew install mongodb
     brew install wget
+    brew install nmap
+    brew install mecab
+    brew install mecab-ipadic
+    brew install freetype 
+    brew install libpng
 
     brew cask install java
     brew cask install eclipse-java
@@ -43,6 +48,7 @@ if [ $# -gt 0 ]; then
     brew cask install virtualbox
     brew cask install karabiner
     brew cask install chefdk
+    brew cask install xquartz
   fi
 fi
 if ! rbenv versions | grep 2.1.0 > /dev/null; then
