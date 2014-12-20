@@ -19,6 +19,7 @@ syntax on
 set cursorline
 set number
 set incsearch
+set clipboard+=unnamed
 
 map <C-S-l> gt
 map <C-S-h> gT

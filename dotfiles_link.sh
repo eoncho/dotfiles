@@ -38,6 +38,7 @@ if [ $# -gt 0 ]; then
     brew install mecab-ipadic
     brew install freetype 
     brew install libpng
+    brew install vim
 
     brew cask install java
     brew cask install eclipse-java
@@ -50,6 +51,10 @@ if [ $# -gt 0 ]; then
     brew cask install chefdk
     brew cask install xquartz
   fi
+fi
+if ! vim --version | grep "+clipboard" > /dev/null; then
+  sudo mv /usr/bin/vim /usr/bin/old_vim
+  sudo ln /usr/local/Cellar/vim/`ls /usr/local/Cellar/vim/`/bin/vim /usr/bin
 fi
 if ! rbenv versions | grep 2.1.0 > /dev/null; then
   rbenv install 2.1.0
