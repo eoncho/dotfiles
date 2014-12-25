@@ -60,6 +60,10 @@ if ! rbenv versions | grep 2.1.0 > /dev/null; then
   rbenv install 2.1.0
   rbenv global 2.1.0
 fi
+if ! sudo nfsd status | grep "enable" ; then
+  sudo nfsd enable
+  sudo touch /etc/exports
+fi
 if which vagrant > /dev/null ; then
   if ! vagrant box list | grep centos64 > /dev/null; then
     vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
