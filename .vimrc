@@ -50,6 +50,8 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
 " make tags file
 NeoBundle 'szw/vim-tags'
+" for coffee script
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
@@ -80,6 +82,11 @@ set statusline+=%{fugitive#statusline()}
 "vim-tags setting
 let g:vim_tags_project_tags_command = "/usr/local/bin/ctags --langmap=RUBY:.rb --exclude='*.js' --exclude='.git*' -f ~/.tags -R `pwd` 2>/dev/null"
 let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags --langmap=RUBY:.rb --exclude='*.js' --exclude='.git*' -f ~/.Gemfile.lock.tags -R `bundle show --paths` 2>/dev/null"
+
+"vim-coffee-script
+au BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
+autocmd FileType coffee  setlocal sw=4 sts=4 ts=4
+
 
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags
