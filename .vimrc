@@ -52,6 +52,8 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'szw/vim-tags'
 " for coffee script
 NeoBundle 'kchmck/vim-coffee-script'
+" for scala
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 

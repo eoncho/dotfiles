@@ -39,6 +39,9 @@ if [ $# -gt 0 ]; then
     brew install freetype 
     brew install libpng
     brew install vim
+    brew install scala
+    brew install sbt
+    brew install android-sdk
 
     brew cask install java
     brew cask install eclipse-java
@@ -50,6 +53,9 @@ if [ $# -gt 0 ]; then
     brew cask install karabiner
     brew cask install chefdk
     brew cask install xquartz
+    brew cask install android-studio
+    brew cask install genymotion
+
   fi
 fi
 if ! vim --version | grep "+clipboard" > /dev/null; then
