@@ -128,3 +128,5 @@ if ! ssh-add -l >& /dev/null ; then
   source $SSH_AGENT_FILE
   ssh-add
 fi
+# for android
+export ANDROID_HOME=/usr/local/opt/android-sdk

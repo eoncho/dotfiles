@@ -89,6 +89,5 @@ let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags --langmap=RUBY:.rb --ex
 au BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 autocmd FileType coffee  setlocal sw=4 sts=4 ts=4
 
-
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags
