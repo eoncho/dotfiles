@@ -55,6 +55,7 @@ if [ $# -gt 0 ]; then
     brew cask install xquartz
     brew cask install android-studio
     brew cask install genymotion
+    brew cask install bettertouchtool
 
   fi
 fi
