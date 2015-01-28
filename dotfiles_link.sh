@@ -20,6 +20,7 @@ if [ $# -gt 0 ]; then
     brew update
     brew upgrade
     brew tap homebrew/versions
+    brew tap homebrew/dupes
     brew tap phinze/homebrew-cask
     brew install brew-cask
     brew install ctags
@@ -42,6 +43,9 @@ if [ $# -gt 0 ]; then
     brew install scala
     brew install sbt
     brew install android-sdk
+    brew install libxml2 libxslt libiconv
+    brew link --force libxml2
+    brew link --force libxslt
 
     brew cask install java
     brew cask install eclipse-java
@@ -81,4 +85,8 @@ if which vagrant > /dev/null ; then
   if ! vagrant plugin list | grep vagrant-berkshelf > /dev/null; then
     vagrant plugin install vagrant-berkshelf
   fi
+fi
+
+if gem list | grep nokogiri > /dev/null; then
+  gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
 fi
