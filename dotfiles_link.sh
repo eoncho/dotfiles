@@ -46,6 +46,7 @@ if [ $# -gt 0 ]; then
     brew install libxml2 libxslt libiconv
     brew link --force libxml2
     brew link --force libxslt
+    brew install gsl
 
     brew cask install java
     brew cask install eclipse-java
