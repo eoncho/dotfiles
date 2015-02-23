@@ -21,6 +21,7 @@ if [ $# -gt 0 ]; then
     brew upgrade
     brew tap homebrew/versions
     brew tap homebrew/dupes
+    brew tap homebrew/science
     brew tap phinze/homebrew-cask
     brew install brew-cask
     brew install ctags
@@ -47,6 +48,8 @@ if [ $# -gt 0 ]; then
     brew link --force libxml2
     brew link --force libxslt
     brew install gsl
+    brew install nkf
+    brew install r
 
     brew cask install java
     brew cask install eclipse-java
@@ -61,6 +64,7 @@ if [ $# -gt 0 ]; then
     brew cask install android-studio
     brew cask install genymotion
     brew cask install bettertouchtool
+    brew cask install rstudio
 
   fi
 fi
@@ -90,4 +94,7 @@ fi
 
 if gem list | grep nokogiri > /dev/null; then
   gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
+fi
+if gem list | grep knife-solo > /dev/null; then
+  gem i knife-solo --no-ri --no-rdoc
 fi
