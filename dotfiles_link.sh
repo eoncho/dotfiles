@@ -66,6 +66,7 @@ if [ $# -gt 0 ]; then
     brew cask install bettertouchtool
     brew cask install rstudio
     brew cask install skype
+    brew cask install spectacle
 
   fi
 fi
