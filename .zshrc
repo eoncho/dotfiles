@@ -50,6 +50,7 @@ path=(
     $HOME/bin(N-/)
     $HOME/.rbenv/bin(N-/)
     $HOME/.pyenv/bin(N-/)
+    $HOME/.embulk/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
     $path

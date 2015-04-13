@@ -97,3 +97,7 @@ fi
 if gem list | grep nokogiri > /dev/null; then
   gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
 fi
+if ! which embulk > /dev/null ; then
+  curl --create-dirs -o ~/.embulk/bin/embulk -L https://bintray.com/artifact/download/embulk/maven/embulk-0.6.1.jar
+  chmod +x ~/.embulk/bin/embulk
+fi
