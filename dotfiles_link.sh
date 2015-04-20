@@ -67,6 +67,7 @@ if [ $# -gt 0 ]; then
     brew cask install rstudio
     brew cask install skype
     brew cask install spectacle
+    brew cask install google-hangouts
 
   fi
 fi
