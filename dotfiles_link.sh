@@ -84,9 +84,9 @@ if ! sudo nfsd status | grep "enable" ; then
   sudo touch /etc/exports
 fi
 if which vagrant > /dev/null ; then
-  if ! vagrant box list | grep centos64 > /dev/null; then
-    vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
-  fi
+#  if ! vagrant box list | grep centos64 > /dev/null; then
+#    vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
+#  fi
   if ! vagrant plugin list | grep vagrant-omnibus > /dev/null; then
     vagrant plugin install vagrant-omnibus
   fi
