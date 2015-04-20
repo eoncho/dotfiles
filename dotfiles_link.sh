@@ -8,6 +8,10 @@ ln -sf ~/my_git/dotfiles/.vrapperrc ~/.vrapperrc
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
 fi
+if ! sudo cat /etc/shells | grep /usr/local/bin/zsh > /dev/null ; then
+  sudo bash -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+  chsh -s /usr/local/bin/zsh
+fi
 if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
