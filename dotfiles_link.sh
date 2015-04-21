@@ -5,15 +5,11 @@ CONFS+=( .zshrc )
 CONFS+=( .vimrc  )
 CONFS+=( .vimperatorrc  )
 CONFS+=( .vrapperrc )
+CONFS+=( .tmux.conf )
 
 for e in ${CONFS[@]}; do
   ln -sf ~/my_git/dotfiles/${e} ~/${e}
 done
-
-#ln -sf ~/my_git/dotfiles/.zshrc ~/.zshrc
-#ln -sf ~/my_git/dotfiles/.vimrc ~/.vimrc
-#ln -sf ~/my_git/dotfiles/.vimperatorrc ~/.vimperatorrc
-#ln -sf ~/my_git/dotfiles/.vrapperrc ~/.vrapperrc
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
@@ -30,10 +26,10 @@ if [ $# -gt 0 ]; then
     fi
     brew update
     brew upgrade
-    brew tap homebrew/versions
-    brew tap homebrew/dupes
-    brew tap homebrew/science
-    brew tap phinze/homebrew-cask
+    TAPS=(homebrew/versions homebrew/dupes homebrew/science phinze/homebrew-cask)
+    for t in ${TAPS[@]}; do
+      brew tap $t
+    done
     brew install brew-cask
     brew install ctags
     brew install pyenv-virtualenv
@@ -115,12 +111,14 @@ if ! rbenv versions | grep 2.1.0 > /dev/null; then
   rbenv install 2.1.0
   rbenv global 2.1.0
 fi
-if ! gem list | grep bundler > /dev/null; then
-  gem install bundler
-fi
-if ! gem list | grep pry > /dev/null; then
-  gem install bundler
-fi
+GEMS=()
+GEMS+=( bundler )
+GEMS+=( pry )
+for g in ${GEMS[@]}; do
+  if ! gem list | grep $g > /dev/null; then
+    gem install $g
+  fi
+done
 if ! gem list | grep nokogiri > /dev/null; then
   gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
 fi
