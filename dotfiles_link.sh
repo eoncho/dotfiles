@@ -50,6 +50,7 @@ if [ $# -gt 0 ]; then
     brew install gsl
     brew install nkf
     brew install r
+    brew install expect
 
     brew cask install java
     brew cask install eclipse-java
