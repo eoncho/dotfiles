@@ -1,9 +1,19 @@
 #!/bin/bash
 
-ln -sf ~/my_git/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/my_git/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/my_git/dotfiles/.vimperatorrc ~/.vimperatorrc
-ln -sf ~/my_git/dotfiles/.vrapperrc ~/.vrapperrc
+CONFS=()
+CONFS+=( .zshrc )
+CONFS+=( .vimrc  )
+CONFS+=( .vimperatorrc  )
+CONFS+=( .vrapperrc )
+
+for e in ${CONFS[@]}; do
+  ln -sf ~/my_git/dotfiles/${e} ~/${e}
+done
+
+#ln -sf ~/my_git/dotfiles/.zshrc ~/.zshrc
+#ln -sf ~/my_git/dotfiles/.vimrc ~/.vimrc
+#ln -sf ~/my_git/dotfiles/.vimperatorrc ~/.vimperatorrc
+#ln -sf ~/my_git/dotfiles/.vrapperrc ~/.vrapperrc
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
