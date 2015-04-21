@@ -4,6 +4,7 @@ ln -sf ~/my_git/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/my_git/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/my_git/dotfiles/.vimperatorrc ~/.vimperatorrc
 ln -sf ~/my_git/dotfiles/.vrapperrc ~/.vrapperrc
+ln -sf ~/my_git/dotfiles/.tmux.conf ~/.tmux.conf
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
