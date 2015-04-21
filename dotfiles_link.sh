@@ -72,6 +72,7 @@ if [ $# -gt 0 ]; then
     brew cask install skype
     brew cask install spectacle
     brew cask install google-hangouts
+    brew cask install firefox
 
   fi
 fi
