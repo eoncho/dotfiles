@@ -6,6 +6,7 @@ CONFS+=( .vimrc  )
 CONFS+=( .vimperatorrc  )
 CONFS+=( .vrapperrc )
 CONFS+=( .tmux.conf )
+CONFS+=( .gitconfig )
 
 for e in ${CONFS[@]}; do
   ln -sf ~/my_git/dotfiles/${e} ~/${e}
