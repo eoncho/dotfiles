@@ -84,7 +84,8 @@ if [ $# -gt 0 ]; then
     brew cask install google-hangouts
     brew cask install firefox
     brew cask install microsoft-office
-
+    brew cask install sophos-anti-virus-home-edition
+      
   fi
 fi
 # vim setting
