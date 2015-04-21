@@ -13,10 +13,7 @@ if ! sudo cat /etc/shells | grep /usr/local/bin/zsh > /dev/null ; then
   sudo bash -c "echo '/usr/local/bin/zsh' >> /etc/shells"
   chsh -s /usr/local/bin/zsh
 fi
-if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
-  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-fi
-
+# install app
 if [ $# -gt 0 ]; then
   if [ $1 = "mac" ]; then
     if ! which brew > /dev/null ; then
@@ -75,21 +72,24 @@ if [ $# -gt 0 ]; then
     brew cask install spectacle
     brew cask install google-hangouts
     brew cask install firefox
+    brew cask install microsoft-office
 
   fi
+fi
+# vim setting
+if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
+  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 if ! vim --version | grep "+clipboard" > /dev/null; then
   sudo mv /usr/bin/vim /usr/bin/old_vim
   sudo ln /usr/local/Cellar/vim/`ls /usr/local/Cellar/vim/`/bin/vim /usr/bin
 fi
-if ! rbenv versions | grep 2.1.0 > /dev/null; then
-  rbenv install 2.1.0
-  rbenv global 2.1.0
-fi
+#  nfsd setting
 if ! sudo nfsd status | grep "enable" ; then
   sudo nfsd enable
   sudo touch /etc/exports
 fi
+# vagrant setting
 if which vagrant > /dev/null ; then
 #  if ! vagrant box list | grep centos64 > /dev/null; then
 #    vagrant box add centos64 http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
@@ -101,10 +101,21 @@ if which vagrant > /dev/null ; then
     vagrant plugin install vagrant-berkshelf
   fi
 fi
-
-if gem list | grep nokogiri > /dev/null; then
+# ruby setting
+if ! rbenv versions | grep 2.1.0 > /dev/null; then
+  rbenv install 2.1.0
+  rbenv global 2.1.0
+fi
+if ! gem list | grep bundler > /dev/null; then
+  gem install bundler
+fi
+if ! gem list | grep pry > /dev/null; then
+  gem install bundler
+fi
+if ! gem list | grep nokogiri > /dev/null; then
   gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
 fi
+# embulk setting
 if ! which embulk > /dev/null ; then
   curl --create-dirs -o ~/.embulk/bin/embulk -L https://bintray.com/artifact/download/embulk/maven/embulk-0.6.1.jar
   chmod +x ~/.embulk/bin/embulk
