@@ -10,7 +10,7 @@
 			<key>host</key>
 			<string>economicindex.ciqtg6kazbmk.ap-northeast-1.rds.amazonaws.com</string>
 			<key>id</key>
-			<integer>-305837038157183610</integer>
+			<integer>-6060242270505242762</integer>
 			<key>name</key>
 			<string>ALL_RDS</string>
 			<key>port</key>
@@ -89,98 +89,12 @@
 			<string>datumstudio</string>
 		</dict>
 		<dict>
-			<key>database</key>
-			<string>doc_pn_test</string>
-			<key>host</key>
-			<string>exp-economicindex.ciqtg6kazbmk.ap-northeast-1.rds.amazonaws.com</string>
-			<key>id</key>
-			<integer>-7783633660957049975</integer>
-			<key>name</key>
-			<string>doc_pn_economic-index</string>
-			<key>port</key>
-			<string></string>
-			<key>socket</key>
-			<string></string>
-			<key>sshHost</key>
-			<string>ec2-54-250-157-87.ap-northeast-1.compute.amazonaws.com</string>
-			<key>sshKeyLocation</key>
-			<string>~/.ssh/ei-key.pem</string>
-			<key>sshKeyLocationEnabled</key>
-			<integer>1</integer>
-			<key>sshPort</key>
-			<string></string>
-			<key>sshUser</key>
-			<string>ec2-user</string>
-			<key>sslCACertFileLocation</key>
-			<string></string>
-			<key>sslCACertFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>sslCertificateFileLocation</key>
-			<string></string>
-			<key>sslCertificateFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>sslKeyFileLocation</key>
-			<string></string>
-			<key>sslKeyFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>type</key>
-			<integer>0</integer>
-			<key>useSSL</key>
-			<integer>0</integer>
-			<key>user</key>
-			<string>eiuser</string>
-		</dict>
-		<dict>
-			<key>database</key>
-			<string>exp-economicindex</string>
 			<key>host</key>
 			<string>exp-economicindex.ciqtg6kazbmk.ap-northeast-1.rds.amazonaws.com</string>
 			<key>id</key>
 			<integer>5570312427574752636</integer>
 			<key>name</key>
 			<string>exp-economic-index</string>
-			<key>port</key>
-			<string></string>
-			<key>socket</key>
-			<string></string>
-			<key>sshHost</key>
-			<string>ec2-54-250-157-87.ap-northeast-1.compute.amazonaws.com</string>
-			<key>sshKeyLocation</key>
-			<string>~/.ssh/ei-key.pem</string>
-			<key>sshKeyLocationEnabled</key>
-			<integer>1</integer>
-			<key>sshPort</key>
-			<string></string>
-			<key>sshUser</key>
-			<string>ec2-user</string>
-			<key>sslCACertFileLocation</key>
-			<string></string>
-			<key>sslCACertFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>sslCertificateFileLocation</key>
-			<string></string>
-			<key>sslCertificateFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>sslKeyFileLocation</key>
-			<string></string>
-			<key>sslKeyFileLocationEnabled</key>
-			<integer>0</integer>
-			<key>type</key>
-			<integer>0</integer>
-			<key>useSSL</key>
-			<integer>0</integer>
-			<key>user</key>
-			<string>eiuser</string>
-		</dict>
-		<dict>
-			<key>database</key>
-			<string>economicindex_local</string>
-			<key>host</key>
-			<string>127.0.0.1</string>
-			<key>id</key>
-			<integer>-713680016837942405</integer>
-			<key>name</key>
-			<string>mac_local</string>
 			<key>port</key>
 			<string></string>
 			<key>socket</key>
