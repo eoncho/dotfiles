@@ -12,6 +12,11 @@ for e in ${CONFS[@]}; do
   ln -sf ~/my_git/dotfiles/${e} ~/${e}
 done
 
+APPCONF=( com.googlecode.iterm2.plist )
+for a in ${APPCONF[@]}; do
+  ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
+done
+
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
 fi
