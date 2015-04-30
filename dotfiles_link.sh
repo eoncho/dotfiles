@@ -85,6 +85,8 @@ if [ $# -gt 0 ]; then
     brew cask install firefox
     brew cask install microsoft-office
     brew cask install sophos-anti-virus-home-edition
+    brew cask install inkscape
+    brew cask install google-chrome
       
   fi
 fi
