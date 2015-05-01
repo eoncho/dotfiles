@@ -103,6 +103,8 @@ alias ll="ls -l"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias knife="bundle exec knife"
+alias berks="bundle exec berks"
 
 ## others ##
 
