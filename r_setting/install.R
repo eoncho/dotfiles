@@ -1,0 +1,7 @@
+#install.packages("dplyr", repos="http://cran.ism.ac.jp/")
+install.packages("tidyr", repos="http://cran.ism.ac.jp/")
+install.packages("data.table", repos="http://cran.ism.ac.jp/")
+install.packages("DBI", repos="http://cran.ism.ac.jp/")
+install.packages("RMySQL", type='source', repos="http://cran.ism.ac.jp/")
+install.packages("ggplot2", repos="http://cran.ism.ac.jp/")
+install.packages("tseries", repos="http://cran.ism.ac.jp/")
