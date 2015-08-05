@@ -21,6 +21,8 @@ set number
 set incsearch
 set clipboard+=unnamed
 
+set completeopt=longest,menuone,preview
+
 map <C-S-l> gt
 map <C-S-h> gT
 
@@ -60,7 +62,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 " for browser
 NeoBundle 'tyru/open-browser.vim'
-
+" for Eclim
+NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
 
 call neobundle#end()
 
@@ -102,6 +105,12 @@ let g:previm_open_cmd = 'open -a Firefox'
 
 "preview 
 noremap po :PrevimOpen<CR>
+
+"eclim
+autocmd FileType java nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
+autocmd FileType java nnoremap <silent> <buffer> <leader>d :JavaDocSearch -x declarations<cr>
+autocmd FileType java nnoremap <silent> <buffer> <C-H> :JavaSearchContext<cr>
+let g:EclimCompletionMethod = 'omnifunc'
 
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags

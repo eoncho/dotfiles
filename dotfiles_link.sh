@@ -64,6 +64,7 @@ if [ $# -gt 0 ]; then
     brew install nkf
     brew install r
     brew install expect
+    brew install ant
 
     brew cask install osxfuse
     brew cask install java
@@ -124,6 +125,7 @@ fi
 GEMS=()
 GEMS+=( bundler )
 GEMS+=( pry )
+GEMS+=( twterm )
 for g in ${GEMS[@]}; do
   if ! gem list | grep $g > /dev/null; then
     gem install $g
