@@ -66,6 +66,9 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
 " for tcomment_vim
 NeoBundle 'tomtom/tcomment_vim'
+" for w3m.vim
+NeoBundle 'yuratomo/w3m.vim'
+
 
 call neobundle#end()
 

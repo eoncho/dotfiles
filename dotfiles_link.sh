@@ -65,6 +65,7 @@ if [ $# -gt 0 ]; then
     brew install r
     brew install expect
     brew install ant
+    brew install w3m
 
     brew cask install osxfuse
     brew cask install java
