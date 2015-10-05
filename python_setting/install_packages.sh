@@ -1,3 +1,6 @@
+#!/usr/bin/sh
+
+pyenv local $1
 # Install pip
 sudo yum install -y python-devel gcc lapack lapack-devel blas blas-devel
 # sudo python ez_setup.py
@@ -5,8 +8,7 @@ sudo easy_install pip
 sudo pip install virtualenv
 
 # Create working directories
-virtualenv /home/ec2-user/svm_doc_pn || exit 1
-cd /home/ec2-user/svm_doc_pn || exit 1
+virtualenv . || exit 1
 source bin/activate
 
 # Install python libraries
