@@ -133,3 +133,5 @@ if ! ssh-add -l >& /dev/null ; then
 fi
 # for android
 export ANDROID_HOME=/usr/local/opt/android-sdk
+# for nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH

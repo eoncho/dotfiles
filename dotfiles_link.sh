@@ -68,6 +68,7 @@ if [ $# -gt 0 ]; then
     brew install w3m
     brew install automake
     brew install e2fsprogs
+    brew install terraform
 
     brew cask install osxfuse
     brew cask install java
@@ -94,6 +95,15 @@ if [ $# -gt 0 ]; then
     brew cask install google-chrome
     brew cask install latexit
       
+    if ! which nodebrew > /dev/null ; then
+      curl https://raw.githubusercontent.com/hokaccha/nodebrew/master/nodebrew | perl - setup
+      echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.zshrc
+      source ~/.zshrc
+      nodebrew install latest
+      nodebrew use latest
+    fi
+    npm i -g archy
+    npm i -g yo generator-hubot
   fi
 fi
 # vim setting
