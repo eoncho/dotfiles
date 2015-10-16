@@ -1,16 +1,5 @@
 #!/bin/bash
 
-CONFS=()
-CONFS+=( .zshrc )
-CONFS+=( .vimrc  )
-CONFS+=( .vimperatorrc  )
-CONFS+=( .vrapperrc )
-CONFS+=( .tmux.conf )
-CONFS+=( .gitconfig )
-
-for e in ${CONFS[@]}; do
-  ln -sf ~/my_git/dotfiles/${e} ~/${e}
-done
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
@@ -21,7 +10,17 @@ if ! sudo cat /etc/shells | grep /usr/local/bin/zsh > /dev/null ; then
 fi
 # install app
 if [ $# -gt 0 ]; then
+  CONFS=()
+  CONFS+=( .zshrc )
+  CONFS+=( .vimrc  )
+
+
   if [ $1 = "mac" ]; then
+    CONFS+=( .vimperatorrc  )
+    CONFS+=( .vrapperrc )
+    CONFS+=( .tmux.conf )
+    CONFS+=( .gitconfig )
+
     APPCONF=( com.googlecode.iterm2.plist )
     for a in ${APPCONF[@]}; do
       ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
@@ -151,6 +150,9 @@ if [ $# -gt 0 ]; then
     fi
 
   fi
+  for e in ${CONFS[@]}; do
+    ln -sf $2${e} ~/${e}
+  done
 fi
 
 # vim setting
