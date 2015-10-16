@@ -67,8 +67,9 @@ NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-
 " for tcomment_vim
 NeoBundle 'tomtom/tcomment_vim'
 " for w3m.vim
-NeoBundle 'yuratomo/w3m.vim'
-
+"NeoBundle 'yuratomo/w3m.vim'
+" for syntastic check 
+NeoBundle 'scrooloose/syntastic.git'
 
 call neobundle#end()
 
@@ -116,6 +117,9 @@ autocmd FileType java nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
 autocmd FileType java nnoremap <silent> <buffer> <leader>d :JavaDocSearch -x declarations<cr>
 autocmd FileType java nnoremap <silent> <buffer> <C-H> :JavaSearchContext<cr>
 let g:EclimCompletionMethod = 'omnifunc'
+
+" python checker
+let g:syntastic_python_checkers = ["flake8"]
 
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags

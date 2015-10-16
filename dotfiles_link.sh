@@ -13,13 +13,12 @@ if [ $# -gt 0 ]; then
   CONFS=()
   CONFS+=( .zshrc )
   CONFS+=( .vimrc  )
-
+  CONFS+=( .gitconfig )
 
   if [ $1 = "mac" ]; then
     CONFS+=( .vimperatorrc  )
     CONFS+=( .vrapperrc )
     CONFS+=( .tmux.conf )
-    CONFS+=( .gitconfig )
 
     APPCONF=( com.googlecode.iterm2.plist )
     for a in ${APPCONF[@]}; do
