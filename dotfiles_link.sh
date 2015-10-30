@@ -92,6 +92,7 @@ if [ $# -gt 0 ]; then
     brew cask install inkscape
     brew cask install google-chrome
     brew cask install latexit
+    brew cask install haskell-platform
       
     if ! which nodebrew > /dev/null ; then
       curl https://raw.githubusercontent.com/hokaccha/nodebrew/master/nodebrew | perl - setup
