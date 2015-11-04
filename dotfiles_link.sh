@@ -67,7 +67,6 @@ if [ $# -gt 0 ]; then
     brew install automake
     brew install e2fsprogs
     brew install terraform
-    brew install ansible
 
     brew cask install osxfuse
     brew cask install java
