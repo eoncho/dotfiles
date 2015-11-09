@@ -93,6 +93,7 @@ if [ $# -gt 0 ]; then
     brew cask install google-chrome
     brew cask install latexit
     brew cask install haskell-platform
+    brew cask install pg-commander
       
     if ! which nodebrew > /dev/null ; then
       curl https://raw.githubusercontent.com/hokaccha/nodebrew/master/nodebrew | perl - setup
