@@ -66,10 +66,12 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
 " for tcomment_vim
 NeoBundle 'tomtom/tcomment_vim'
-" for w3m.vim
-"NeoBundle 'yuratomo/w3m.vim'
 " for syntastic check 
-NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'scrooloose/syntastic'
+" for surround
+NeoBundle 'tpope/vim-surround'
+" for iedi
+NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -120,6 +122,9 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " python checker
 let g:syntastic_python_checkers = ["flake8"]
+
+" jedi
+
 
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags
