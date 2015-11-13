@@ -72,6 +72,9 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 " for iedi
 NeoBundle 'davidhalter/jedi-vim'
+" for YankRing
+NeoBundle 'vim-scripts/YankRing.vim'
+
 
 call neobundle#end()
 
