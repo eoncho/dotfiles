@@ -125,6 +125,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " python checker
 let g:syntastic_python_checkers = ["flake8"]
+autocmd FileType python setlocal sw=4 sts=4 ts=4
 
 " jedi
 
