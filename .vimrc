@@ -74,6 +74,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'davidhalter/jedi-vim'
 " for YankRing
 NeoBundle 'vim-scripts/YankRing.vim'
+" for pep8 indent
+NeoBundle 'hynek/vim-python-pep8-indent'
 
 
 call neobundle#end()
