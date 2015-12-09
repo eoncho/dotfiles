@@ -95,6 +95,7 @@ if [ $# -gt 0 ]; then
     brew cask install haskell-platform
     brew cask install pg-commander
     brew cask install mindnode-pro
+    brew cask install dropbox
       
     if ! which nodebrew > /dev/null ; then
       curl https://raw.githubusercontent.com/hokaccha/nodebrew/master/nodebrew | perl - setup
