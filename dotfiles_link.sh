@@ -41,7 +41,7 @@ if [ $# -gt 0 ]; then
     brew install rbenv-gem-rehash
     brew install rbenv-gemset
     brew install ruby-build
-   	brew install tmux
+    brew install tmux
     brew install zsh
     brew install zsh-completions
     brew install mongodb
