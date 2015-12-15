@@ -91,6 +91,7 @@ if [ $# -gt 0 ]; then
     brew cask install sophos-anti-virus-home-edition
     brew cask install inkscape
     brew cask install google-chrome
+    brew cask install maxtex
     brew cask install latexit
     brew cask install haskell-platform
     brew cask install pg-commander
