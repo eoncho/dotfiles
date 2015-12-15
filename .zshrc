@@ -103,6 +103,8 @@ alias ll="ls -l"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias knife="bundle exec knife"
+alias berks="bundle exec berks"
 
 ## others ##
 
@@ -131,3 +133,5 @@ if ! ssh-add -l >& /dev/null ; then
 fi
 # for android
 export ANDROID_HOME=/usr/local/opt/android-sdk
+# for nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$HOME/Library/Haskell/bin:$PATH

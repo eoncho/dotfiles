@@ -21,6 +21,8 @@ set number
 set incsearch
 set clipboard+=unnamed
 
+set completeopt=longest,menuone,preview
+
 map <C-S-l> gt
 map <C-S-h> gT
 
@@ -54,6 +56,27 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'kchmck/vim-coffee-script'
 " for scala
 NeoBundle 'derekwyatt/vim-scala'
+" for markdown
+NeoBundle 'plasticboy/vim-markdown'
+" for preview
+NeoBundle 'kannokanno/previm'
+" for browser
+NeoBundle 'tyru/open-browser.vim'
+" for Eclim
+NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
+" for tcomment_vim
+NeoBundle 'tomtom/tcomment_vim'
+" for syntastic check 
+NeoBundle 'scrooloose/syntastic'
+" for surround
+NeoBundle 'tpope/vim-surround'
+" for iedi
+NeoBundle 'davidhalter/jedi-vim'
+" for YankRing
+NeoBundle 'vim-scripts/YankRing.vim'
+" for pep8 indent
+NeoBundle 'hynek/vim-python-pep8-indent'
+
 
 call neobundle#end()
 
@@ -68,7 +91,7 @@ let g:unit_enable_insert=1
 noremap <C-p> :Unite buffer<CR>
 "file list
 noremap <C-n> :Unite -buffer-name=file file<CR>
-"
+"file menu
 noremap <C-z> :Unite file_mru<CR>
 
 "NERDTree setting
@@ -88,6 +111,26 @@ let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags --langmap=RUBY:.rb --ex
 "vim-coffee-script
 au BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 autocmd FileType coffee  setlocal sw=4 sts=4 ts=4
+
+"markdwon setting
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
+
+"preview 
+noremap po :PrevimOpen<CR>
+
+"eclim
+autocmd FileType java nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
+autocmd FileType java nnoremap <silent> <buffer> <leader>d :JavaDocSearch -x declarations<cr>
+autocmd FileType java nnoremap <silent> <buffer> <C-H> :JavaSearchContext<cr>
+let g:EclimCompletionMethod = 'omnifunc'
+
+" python checker
+let g:syntastic_python_checkers = ["flake8"]
+autocmd FileType python setlocal sw=4 sts=4 ts=4
+
+" jedi
+
 
 set tags+=$HOME/.tags
 set tags+=$HOME/.Gemfile.lock.tags
