@@ -9,7 +9,7 @@ if ! sudo cat /etc/shells | grep /usr/local/bin/zsh > /dev/null ; then
   chsh -s /usr/local/bin/zsh
 fi
 # install app
-if [ $# -gt 0 ]; then
+if [ $# -gt 1 ]; then
   CONFS=()
   CONFS+=( .zshrc )
   CONFS+=( .vimrc  )
@@ -95,8 +95,8 @@ if [ $# -gt 0 ]; then
     brew cask install sophos-anti-virus-home-edition
     brew cask install inkscape
     brew cask install google-chrome
-    brew cask install maxtex
     brew cask install latexit
+    brew cask install mactex
     brew cask install haskell-platform
     brew cask install pg-commander
     brew cask install mindnode-pro
