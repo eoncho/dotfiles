@@ -20,6 +20,10 @@ if [ $# -gt 1 ]; then
     CONFS+=( .vrapperrc )
     CONFS+=( .tmux.conf )
 
+    for e in ${CONFS[@]}; do
+      ln -sf `pwd`"/"${e} ~/${e}
+    done
+
     APPCONF=( com.googlecode.iterm2.plist )
     for a in ${APPCONF[@]}; do
       ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
@@ -154,9 +158,6 @@ if [ $# -gt 1 ]; then
     fi
 
   fi
-  for e in ${CONFS[@]}; do
-    ln -sf $2${e} ~/${e}
-  done
 fi
 
 # vim setting
