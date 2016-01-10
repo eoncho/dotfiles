@@ -9,7 +9,7 @@ if ! sudo cat /etc/shells | grep /usr/local/bin/zsh > /dev/null ; then
   chsh -s /usr/local/bin/zsh
 fi
 # install app
-if [ $# -gt 1 ]; then
+if [ $# -gt 0 ]; then
   CONFS=()
   CONFS+=( .zshrc )
   CONFS+=( .vimrc  )
