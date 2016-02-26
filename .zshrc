@@ -135,3 +135,5 @@ fi
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # for nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$HOME/Library/Haskell/bin:$PATH
+# for sphinx
+export LC_ALL=en_US.UTF-8
