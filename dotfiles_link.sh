@@ -68,11 +68,11 @@ if [ $# -gt 0 ]; then
     brew install nkf
     brew install expect
     brew install automake
-    brew install slack
 
     brew cask install iterm2
     brew cask install firefox
     brew cask install dropbox
+    brew cask install slack
 
     if [ $# -gt 2 ]; then
       if [ $2 = "dev" ]; then
