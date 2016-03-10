@@ -68,6 +68,7 @@ if [ $# -gt 0 ]; then
     brew install nkf
     brew install expect
     brew install automake
+    brew install slack
 
     brew cask install iterm2
     brew cask install firefox
@@ -87,6 +88,7 @@ if [ $# -gt 0 ]; then
         brew link --force libxslt
         brew install ant
         brew install terraform
+        brew install packer
         brew install w3m
         brew install gsl
         brew install r
