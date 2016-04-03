@@ -68,13 +68,14 @@ if [ $# -gt 0 ]; then
     brew install nkf
     brew install expect
     brew install automake
+    brew install p7zip
 
     brew cask install iterm2
     brew cask install firefox
     brew cask install dropbox
     brew cask install slack
 
-    if [ $# -gt 2 ]; then
+    if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
         brew install ctags
         brew install mongodb
@@ -93,6 +94,7 @@ if [ $# -gt 0 ]; then
         brew install gsl
         brew install r
         brew install e2fsprogs
+        brew install go
     
         brew cask install osxfuse
         brew cask install java
