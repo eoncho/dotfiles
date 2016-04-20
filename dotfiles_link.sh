@@ -95,6 +95,7 @@ if [ $# -gt 0 ]; then
         brew install r
         brew install e2fsprogs
         brew install go
+        brew install tinysvm
     
         brew cask install osxfuse
         brew cask install java
