@@ -2,7 +2,7 @@ set showstatuslinls=2
 set foucuscountent
 set hintchars=asdfghjkl
 
-map S :source ~/.vimperatorrc<CR>
+map R :source ~/.vimperatorrc<CR>
 
 map t :tabopen google 
 map o :open google 
@@ -13,10 +13,17 @@ map k 5<C-y>
 map h <C-pageup>
 map l <C-pagedown>
 
+" move tab
 map H :tabmove! -1<CR>
 map L :tabmove! +1<CR>
 
 map <C-p> <a-left>
 map <C-n> <a-right>
+
+" at visual mode, search choice words
+vmap <C-s> y<Esc><Esc>:t <M-v><CR>
+
+" at visual mode, search choice words
+vmap <C-e> y<Esc><Esc>:t<Space><M-v><Space>英語<CR>
 
 echo "vimperatorrc sourced !!"
