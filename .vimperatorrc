@@ -26,4 +26,10 @@ vmap <C-s> y<Esc><Esc>:t <M-v><CR>
 " at visual mode, search choice words
 vmap <C-e> y<Esc><Esc>:t<Space><M-v><Space>英語<CR>
 
+source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
+
+" plugins
+vimppm 'caret-hint.js'
+
+
 echo "vimperatorrc sourced !!"

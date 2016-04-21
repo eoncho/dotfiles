@@ -25,6 +25,17 @@ if [ $# -gt 0 ]; then
       ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
     done
 
+    # setting for vimperator
+    if [ ! -e ~/.vimperator ]; then
+      mkdir ~/.vimperator
+    else
+      cd ~/.vimperator
+      if [ ! -e ~/.vimperator/vimppm ]; then
+        mkdir vimppm
+        cd vimppm
+        git clone git://github.com/cd01/vimppm
+      fi
+    fi
     if ! which brew > /dev/null ; then
       ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     fi
