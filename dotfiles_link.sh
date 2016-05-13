@@ -80,6 +80,7 @@ if [ $# -gt 0 ]; then
     brew install expect
     brew install automake
     brew install p7zip
+    brew install reattach-to-user-namespace
 
     brew cask install iterm2
     brew cask install firefox
