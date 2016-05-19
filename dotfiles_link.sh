@@ -136,6 +136,7 @@ if [ $# -gt 0 ]; then
         brew cask install pg-commander
         brew cask install mindnode-pro
         brew cask install anaconda
+        brew cask install postico
   
         # node setting
         if ! which nodebrew > /dev/null ; then
