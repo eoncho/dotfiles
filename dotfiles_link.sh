@@ -86,6 +86,7 @@ if [ $# -gt 0 ]; then
     brew cask install firefox
     brew cask install dropbox
     brew cask install slack
+    brew cask install opera
 
     if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
