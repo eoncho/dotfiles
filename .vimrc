@@ -117,7 +117,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Firefox'
 
 "preview 
-noremap po :PrevimOpen<CR>
+noremap preopen :PrevimOpen<CR>
 
 "eclim
 autocmd FileType java nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
