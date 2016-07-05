@@ -110,7 +110,7 @@ let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags --langmap=RUBY:.rb --ex
 
 "vim-coffee-script
 au BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
-autocmd FileType coffee  setlocal sw=4 sts=4 ts=4
+autocmd FileType coffee setlocal sw=4 sts=4 ts=4
 
 "markdwon setting
 au BufRead,BufNewFile *.md set filetype=markdown

@@ -139,3 +139,5 @@ export PATH=$HOME/.nodebrew/current/bin:$HOME/Library/Haskell/bin:$PATH
 export LC_ALL=en_US.UTF-8
 # for python
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# cask-room
+export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
