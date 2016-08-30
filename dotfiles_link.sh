@@ -87,6 +87,7 @@ if [ $# -gt 0 ]; then
     brew cask install dropbox
     brew cask install slack
     brew cask install opera
+    brew cask install freemind
 
     if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
@@ -109,7 +110,7 @@ if [ $# -gt 0 ]; then
         brew install e2fsprogs
         brew install go
         brew install tinysvm
-    
+
         brew cask install osxfuse
         brew cask install java
         brew cask install eclipse-java
@@ -138,6 +139,9 @@ if [ $# -gt 0 ]; then
         brew cask install mindnode-pro
         brew cask install anaconda
         brew cask install postico
+        
+        brew unlink mysql-connector-c
+        brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
   
         # node setting
         if ! which nodebrew > /dev/null ; then
