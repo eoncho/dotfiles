@@ -88,6 +88,7 @@ if [ $# -gt 0 ]; then
     brew cask install slack
     brew cask install opera
     brew cask install freemind
+    brew cask install kindle
 
     if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
@@ -139,6 +140,7 @@ if [ $# -gt 0 ]; then
         brew cask install mindnode-pro
         brew cask install anaconda
         brew cask install postico
+        brew cask install julia
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
