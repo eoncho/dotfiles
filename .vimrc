@@ -76,7 +76,10 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/YankRing.vim'
 " for pep8 indent
 NeoBundle 'hynek/vim-python-pep8-indent'
-
+" for julia-vim
+NeoBundle 'JuliaLang/julia-vim'
+" for vim-go
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 

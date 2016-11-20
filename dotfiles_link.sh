@@ -111,6 +111,7 @@ if [ $# -gt 0 ]; then
         brew install e2fsprogs
         brew install go
         brew install tinysvm
+        brew install direnv
 
         brew cask install osxfuse
         brew cask install java
@@ -175,6 +176,9 @@ if [ $# -gt 0 ]; then
         if ! which embulk > /dev/null ; then
           curl --create-dirs -o ~/.embulk/bin/embulk -L https://bintray.com/artifact/download/embulk/maven/embulk-0.6.1.jar
           chmod +x ~/.embulk/bin/embulk
+        fi
+        if ! which rustup > /dev/null ; then
+          curl https://sh.rustup.rs -sSf | sh      
         fi
       fi
     fi 

@@ -122,6 +122,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # pyenv-virtualenv init
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# direnv
+if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 
 # ssh-agent-foward
 SSH_AGENT_FILE="$HOME/.ssh-agent-info"
@@ -131,6 +133,8 @@ if ! ssh-add -l >& /dev/null ; then
   source $SSH_AGENT_FILE
   ssh-add
 fi
+if ! which rustc > /dev/null ; then source ~/.cargo/env; fi
+#
 # for android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # for gohome
@@ -143,3 +147,6 @@ export LC_ALL=en_US.UTF-8
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # cask-room
 export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
+# dor direnv
+export EDITOR=vim
+
