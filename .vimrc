@@ -80,6 +80,9 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'JuliaLang/julia-vim'
 " for vim-go
 NeoBundle 'fatih/vim-go'
+" for rust.vim
+NeoBundle 'rust-lang/rust.vim'
+
 
 call neobundle#end()
 

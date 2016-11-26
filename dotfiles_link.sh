@@ -112,6 +112,8 @@ if [ $# -gt 0 ]; then
         brew install go
         brew install tinysvm
         brew install direnv
+        brew install libiomp
+        brew install clang-omp
 
         brew cask install osxfuse
         brew cask install java
@@ -177,8 +179,20 @@ if [ $# -gt 0 ]; then
           curl --create-dirs -o ~/.embulk/bin/embulk -L https://bintray.com/artifact/download/embulk/maven/embulk-0.6.1.jar
           chmod +x ~/.embulk/bin/embulk
         fi
+        # for rust
         if ! which rustup > /dev/null ; then
           curl https://sh.rustup.rs -sSf | sh      
+        fi
+        # clang update
+        if ! ls /usr/bin/clang-apple > /dev/null ; then
+          sudo mv /usr/bin/clang /usr/bin/clang-apple
+          sudo ln -fs /usr/bin/clang-omp /usr/bin/clang
+          sudo cp /usr/local/lib/libiomp5.dylib /usr/lib/
+        fi
+
+        if ! ls /usr/bin/clang++-apple > /dev/null ; then
+          sudo mv /usr/bin/clang++ /usr/bin/clang++-apple
+          sudo ln -fs /usr/bin/clang-omp++ /usr/bin/clang++
         fi
       fi
     fi 
@@ -195,8 +209,7 @@ if [ $# -gt 0 ]; then
       sudo touch /etc/exports
     fi
 
-    
-  fi
+ fi
 fi
 
 # shell to zsh

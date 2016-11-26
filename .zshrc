@@ -133,8 +133,9 @@ if ! ssh-add -l >& /dev/null ; then
   source $SSH_AGENT_FILE
   ssh-add
 fi
+# Caqrgo
 if ! which rustc > /dev/null ; then source ~/.cargo/env; fi
-#
+ 
 # for android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # for gohome
