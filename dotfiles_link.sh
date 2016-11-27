@@ -186,12 +186,12 @@ if [ $# -gt 0 ]; then
         # clang update
         if ! ls /usr/bin/clang-apple > /dev/null ; then
           sudo mv /usr/bin/clang /usr/bin/clang-apple
-          sudo ln -fs /usr/bin/clang-omp /usr/bin/clang
+          sudo ln -fs /usr/local/bin/clang-omp /usr/bin/clang
           sudo cp /usr/local/lib/libiomp5.dylib /usr/lib/
         fi
 
         if ! ls /usr/bin/clang++-apple > /dev/null ; then
-          sudo mv /usr/bin/clang++ /usr/bin/clang++-apple
+          sudo mv /usr/local/bin/clang++ /usr/bin/clang++-apple
           sudo ln -fs /usr/bin/clang-omp++ /usr/bin/clang++
         fi
       fi

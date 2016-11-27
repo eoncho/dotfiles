@@ -105,6 +105,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias knife="bundle exec knife"
 alias berks="bundle exec berks"
+alias time=/usr/bin/time
 
 ## others ##
 
