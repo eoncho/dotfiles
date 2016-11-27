@@ -12,6 +12,7 @@ if [ $# -gt 0 ]; then
   CONFS+=( .gitconfig )
 
   if [ $1 = "mac" ]; then
+    echo "mac settings start"
     CONFS+=( .vimperatorrc  )
     CONFS+=( .vrapperrc )
     CONFS+=( .tmux.conf )
@@ -114,6 +115,7 @@ if [ $# -gt 0 ]; then
         brew install direnv
         brew install libiomp
         brew install clang-omp
+        brew install coreutil
 
         brew cask install osxfuse
         brew cask install java
@@ -144,6 +146,7 @@ if [ $# -gt 0 ]; then
         brew cask install anaconda
         brew cask install postico
         brew cask install julia
+        brew cask install cuda
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
@@ -208,8 +211,9 @@ if [ $# -gt 0 ]; then
       sudo nfsd enable
       sudo touch /etc/exports
     fi
-
- fi
+  elif [ $1 = "ubunts" ]; then 
+    echo "ubunts setting start"
+  fi
 fi
 
 # shell to zsh
