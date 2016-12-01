@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -u
+set -o
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
@@ -38,7 +40,8 @@ if [ $# -gt 0 ]; then
       fi
     fi
     if ! which brew > /dev/null ; then
-      ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+      echo ‘brew install !!’
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
     brew upgrade

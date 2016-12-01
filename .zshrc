@@ -153,3 +153,4 @@ export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
 # dor direnv
 export EDITOR=vim
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
