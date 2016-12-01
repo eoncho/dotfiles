@@ -51,6 +51,7 @@ path=(
     $HOME/.rbenv/bin(N-/)
     $HOME/.pyenv/bin(N-/)
     $HOME/.embulk/bin(N-/)
+    /usr/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
     /usr/local/opt/coreutils/libexec/gnubin(N-/)
