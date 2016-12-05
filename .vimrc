@@ -71,7 +71,7 @@ NeoBundle 'scrooloose/syntastic'
 " for surround
 NeoBundle 'tpope/vim-surround'
 " for iedi
-NeoBundle 'davidhalter/jedi-vim'
+"NeoBundle 'davidhalter/jedi-vim'
 " for YankRing
 NeoBundle 'vim-scripts/YankRing.vim'
 " for pep8 indent
