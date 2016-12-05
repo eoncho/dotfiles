@@ -175,10 +175,14 @@ if [ $# -gt 0 ]; then
           fi
           if ! vagrant plugin list | grep vagrant-berkshelf > /dev/null; then
             vagrant plugin install vagrant-berkshelf
-        fi
+          fi
         fi
         if ! gem list | grep nokogiri > /dev/null; then
           gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
+        fi
+        # for pyenv
+        if ! pyenv versions | grep miniconda > /dev/null ; then
+          pyenv install miniconda-latest
         fi
         # embulk setting
         if ! which embulk > /dev/null ; then
