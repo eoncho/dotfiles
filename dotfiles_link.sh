@@ -119,6 +119,7 @@ if [ $# -gt 0 ]; then
         brew install libiomp
         brew install clang-omp
         brew install coreutil
+        brew install phamtomjs
 
         brew cask install osxfuse
         brew cask install java
