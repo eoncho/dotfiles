@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -u
+set -o
 
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
@@ -38,7 +40,8 @@ if [ $# -gt 0 ]; then
       fi
     fi
     if ! which brew > /dev/null ; then
-      ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+      echo ‘brew install !!’
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
     brew upgrade
@@ -116,6 +119,7 @@ if [ $# -gt 0 ]; then
         brew install libiomp
         brew install clang-omp
         brew install coreutil
+        brew install phamtomjs
 
         brew cask install osxfuse
         brew cask install java
@@ -172,10 +176,14 @@ if [ $# -gt 0 ]; then
           fi
           if ! vagrant plugin list | grep vagrant-berkshelf > /dev/null; then
             vagrant plugin install vagrant-berkshelf
-        fi
+          fi
         fi
         if ! gem list | grep nokogiri > /dev/null; then
           gem install nokogiri -- --use-system-libraries --with-iconv-dir="$(brew --prefix libiconv)" --with-xml2-config="$(brew --prefix libxml2)/bin/xml2-config" --with-xslt-config="$(brew --prefix libxslt)/bin/xslt-config"
+        fi
+        # for pyenv
+        if ! pyenv versions | grep miniconda > /dev/null ; then
+          pyenv install miniconda-latest
         fi
         # embulk setting
         if ! which embulk > /dev/null ; then
@@ -188,14 +196,21 @@ if [ $# -gt 0 ]; then
         fi
         # clang update
         if ! ls /usr/bin/clang-apple > /dev/null ; then
-          sudo mv /usr/bin/clang /usr/bin/clang-apple
-          sudo ln -fs /usr/local/bin/clang-omp /usr/bin/clang
-          sudo cp /usr/local/lib/libiomp5.dylib /usr/lib/
+          if ls /usr/local/bin/clang-omp > /dev/null ; then
+            sudo mv /usr/bin/clang /usr/bin/clang-apple
+            sudo ln -fs /usr/local/bin/clang-omp /usr/bin/clang
+            sudo cp /usr/local/lib/libiomp5.dylib /usr/lib/
+          fi 
         fi
 
         if ! ls /usr/bin/clang++-apple > /dev/null ; then
-          sudo mv /usr/local/bin/clang++ /usr/bin/clang++-apple
-          sudo ln -fs /usr/bin/clang-omp++ /usr/bin/clang++
+          if ls /usr/local/bin/clang-omp++ > /dev/null ; then
+            sudo mv /usr/local/bin/clang++ /usr/bin/clang++-apple
+            sudo ln -fs /usr/bin/clang-omp++ /usr/bin/clang++
+          fi
+          if ! /usr/bin/clang++ > /dev/null ; then
+            sudo ln -fs /usr/bin/clang /usr/bin/clang++
+          fi
         fi
       fi
     fi 

@@ -51,6 +51,7 @@ path=(
     $HOME/.rbenv/bin(N-/)
     $HOME/.pyenv/bin(N-/)
     $HOME/.embulk/bin(N-/)
+    /usr/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
     /usr/local/cuda/bin(N-/)
@@ -154,3 +155,4 @@ export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
 # dor direnv
 export EDITOR=vim
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
