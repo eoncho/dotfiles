@@ -54,6 +54,7 @@ path=(
     /usr/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
+    /usr/local/cuda/bin(N-/)
     /usr/local/opt/coreutils/libexec/gnubin(N-/)
     $path
 )

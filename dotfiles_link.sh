@@ -224,6 +224,9 @@ if [ $# -gt 0 ]; then
       sudo ln /usr/local/Cellar/vim/`ls /usr/local/Cellar/vim/`/bin/vim /usr/bin
     fi
 
+    if ! cat ~/.tmux.conf | grep reattach-to-user-namespace ? /dev/null; then
+      echo 'set-option -g default-command "reattach-to-user-namespace -l bash"' >> ~/.tmux.conf
+    fi
     #  nfsd setting
     if ! sudo nfsd status | grep "enable" ; then
       sudo nfsd enable
