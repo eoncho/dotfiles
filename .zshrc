@@ -108,6 +108,7 @@ alias mv="mv -i"
 alias knife="bundle exec knife"
 alias berks="bundle exec berks"
 alias time=/usr/bin/time
+alias docker-start="docker-machine start default && eval ""$(docker-machine env default)"""
 
 ## others ##
 

@@ -120,6 +120,9 @@ if [ $# -gt 0 ]; then
         brew install clang-omp
         brew install coreutil
         brew install phamtomjs
+        brew install docker
+        brew install docker-machine
+        brew install mono
 
         brew cask install osxfuse
         brew cask install java
