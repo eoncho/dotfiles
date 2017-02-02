@@ -18,15 +18,16 @@ if [ $# -gt 0 ]; then
     CONFS+=( .vimperatorrc  )
     CONFS+=( .vrapperrc )
     CONFS+=( .tmux.conf )
+    CONFS+=( .bash_profile )
 
     for e in ${CONFS[@]}; do
       ln -sf `pwd`"/"${e} ~/${e}
     done
 
-    APPCONF=( com.googlecode.iterm2.plist )
-    for a in ${APPCONF[@]}; do
-      ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
-    done
+#   APPCONF=( com.googlecode.iterm2.plist )
+#   for a in ${APPCONF[@]}; do
+#     ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
+#   done
 
     # setting for vimperator
     if [ ! -e ~/.vimperator ]; then
@@ -123,6 +124,7 @@ if [ $# -gt 0 ]; then
         brew install docker
         brew install docker-machine
         brew install mono
+        brew install opencv
 
         brew cask install osxfuse
         brew cask install java
