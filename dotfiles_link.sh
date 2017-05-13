@@ -94,6 +94,7 @@ if [ $# -gt 0 ]; then
     brew cask install opera
     brew cask install freemind
     brew cask install kindle
+    brew cask install multifirefox
 
     if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
@@ -125,6 +126,7 @@ if [ $# -gt 0 ]; then
         brew install docker-machine
         brew install mono
         brew install opencv
+        brew install git-flow-avh
 
         brew cask install osxfuse
         brew cask install java
@@ -156,6 +158,7 @@ if [ $# -gt 0 ]; then
         brew cask install postico
         brew cask install julia
         brew cask install cuda
+        brew cask install unity
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
