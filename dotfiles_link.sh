@@ -127,6 +127,10 @@ if [ $# -gt 0 ]; then
         brew install mono
         brew install opencv
         brew install git-flow-avh
+        brew install postgis
+        brew install igraph
+        brew install wine
+        brew install zenity
 
         brew cask install osxfuse
         brew cask install java
@@ -159,6 +163,8 @@ if [ $# -gt 0 ]; then
         brew cask install julia
         brew cask install cuda
         brew cask install unity
+        brew cask install pgadmin4
+        brew cask install atom
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
@@ -173,6 +179,7 @@ if [ $# -gt 0 ]; then
         fi
         npm i -g archy
         npm i -g yo generator-hubot
+        npm i --save-dev gulp
   
         # vagrant setting
         if which vagrant > /dev/null ; then

@@ -51,6 +51,7 @@ path=(
     $HOME/.rbenv/bin(N-/)
     $HOME/.pyenv/bin(N-/)
     $HOME/.embulk/bin(N-/)
+    $HOME/.scalaenv/bin(N-/)
     /usr/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
@@ -129,6 +130,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 # direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
+# scalaenv
+if whicch scalaenv > /dev/null; then eval "$(scalaenv init -)"; fi
 
 # ssh-agent-foward
 SSH_AGENT_FILE="$HOME/.ssh-agent-info"

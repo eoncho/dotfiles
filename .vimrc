@@ -82,6 +82,8 @@ NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'fatih/vim-go'
 " for rust.vim
 NeoBundle 'rust-lang/rust.vim'
+" for vim-scala
+NeoBundle 'derekwyatt/vim-scala'
 
 
 call neobundle#end()
