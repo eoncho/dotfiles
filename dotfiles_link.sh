@@ -131,6 +131,7 @@ if [ $# -gt 0 ]; then
         brew install igraph
         brew install wine
         brew install zenity
+        brew install apache-spark
 
         brew cask install osxfuse
         brew cask install java
