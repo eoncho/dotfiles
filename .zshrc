@@ -52,6 +52,7 @@ path=(
     $HOME/.pyenv/bin(N-/)
     $HOME/.embulk/bin(N-/)
     $HOME/.scalaenv/bin(N-/)
+    $HOME/.goenv/bin(N-/)
     /usr/bin(N-/)
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
@@ -131,7 +132,9 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 # direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 # scalaenv
-if whicch scalaenv > /dev/null; then eval "$(scalaenv init -)"; fi
+if which scalaenv > /dev/null; then eval "$(scalaenv init -)"; fi
+# goenv
+if which goenv > /dev/null; then eval "$(goenv init -)"; fi
 
 # ssh-agent-foward
 SSH_AGENT_FILE="$HOME/.ssh-agent-info"
@@ -155,8 +158,11 @@ export LC_ALL=en_US.UTF-8
 # for python
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # cask-room
-export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
+#export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
 # dor direnv
 export EDITOR=vim
+
+# for spark
+export SPARK_HOME=
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH

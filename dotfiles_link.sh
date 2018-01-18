@@ -132,6 +132,7 @@ if [ $# -gt 0 ]; then
         brew install wine
         brew install zenity
         brew install apache-spark
+        brew install snappy
 
         brew cask install osxfuse
         brew cask install java
@@ -166,6 +167,7 @@ if [ $# -gt 0 ]; then
         brew cask install unity
         brew cask install pgadmin4
         brew cask install atom
+        brew cask install intellij-idea-ce 
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 

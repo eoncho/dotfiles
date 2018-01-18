@@ -38,9 +38,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" file open
-NeoBundle 'Shougo/unite.vim'
-" file open etc
+" file open NeoBundle 'Shougo/unite.vim' " file open etc
 NeoBundle 'Shougo/neomru.vim'
 " dir tree view
 NeoBundle 'scrooloose/nerdtree'
@@ -63,7 +61,7 @@ NeoBundle 'kannokanno/previm'
 " for browser
 NeoBundle 'tyru/open-browser.vim'
 " for Eclim
-NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
+"NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
 " for tcomment_vim
 NeoBundle 'tomtom/tcomment_vim'
 " for syntastic check 
@@ -82,13 +80,14 @@ NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'fatih/vim-go'
 " for rust.vim
 NeoBundle 'rust-lang/rust.vim'
-" for vim-scala
-NeoBundle 'derekwyatt/vim-scala'
 
 
 call neobundle#end()
 
 filetype plugin indent on
+
+" for syntax
+let g:indentLine_faster=1
 
 NeoBundleCheck
 
@@ -97,6 +96,7 @@ let g:unit_enable_insert=1
 
 "buffer list
 noremap <C-p> :Unite buffer<CR>
+"
 "file list
 noremap <C-n> :Unite -buffer-name=file file<CR>
 "file menu
@@ -137,9 +137,13 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 autocmd FileType python setlocal sw=4 sts=4 ts=4
 
-" vim-scala
-au BufNewFile,BufRead *.scala set filetype=scala
+let g:syntastic_mode_map = { "mode": "active",
+                           \ "active_filetypes": [],
+                           \ "passive_filetypes": ["scala"] }
  
+" scala
+au BufRead,BufNewFile *.scala  set filetype=scala
+
 " jedi
 
 
