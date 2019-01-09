@@ -12,22 +12,13 @@ if [ $# -gt 0 ]; then
   CONFS+=( .zshrc )
   CONFS+=( .vimrc  )
   CONFS+=( .gitconfig )
+  CONFS+=( .bash_profile )
 
   if [ $1 = "mac" ]; then
     echo "mac settings start"
     CONFS+=( .vimperatorrc  )
     CONFS+=( .vrapperrc )
     CONFS+=( .tmux.conf )
-    CONFS+=( .bash_profile )
-
-    for e in ${CONFS[@]}; do
-      ln -sf `pwd`"/"${e} ~/${e}
-    done
-
-#   APPCONF=( com.googlecode.iterm2.plist )
-#   for a in ${APPCONF[@]}; do
-#     ln -sf ~/my_git/dotfiles/$a ~/Library/Preferences/$a
-#   done
 
     # setting for vimperator
     if [ ! -e ~/.vimperator ]; then
@@ -247,9 +238,13 @@ if [ $# -gt 0 ]; then
       sudo nfsd enable
       sudo touch /etc/exports
     fi
-  elif [ $1 = "ubunts" ]; then 
-    echo "ubunts setting start"
+  elif [ $1 = "ubuntu" ]; then 
+    echo "ubuntu setting start"
+    echo "no settings now"
   fi
+  for e in ${CONFS[@]}; do
+    ln -sf `pwd`"/"${e} ~/${e}
+  done
 fi
 
 # shell to zsh

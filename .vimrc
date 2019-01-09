@@ -39,47 +39,47 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " file open NeoBundle 'Shougo/unite.vim' " file open etc
-NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'Shougo/neomru.vim'
 " dir tree view
-NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdtree'
 " for git 
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'tpope/vim-fugitive'
 " for rails
-NeoBundle 'tpope/vim-rails'
+" NeoBundle 'tpope/vim-rails'
 " for ruby end
-NeoBundle 'tpope/vim-endwise'
+" NeoBundle 'tpope/vim-endwise'
 " make tags file
-NeoBundle 'szw/vim-tags'
+" NeoBundle 'szw/vim-tags'
 " for coffee script
-NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'kchmck/vim-coffee-script'
 " for scala
-NeoBundle 'derekwyatt/vim-scala'
+" NeoBundle 'derekwyatt/vim-scala'
 " for markdown
-NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'plasticboy/vim-markdown'
 " for preview
-NeoBundle 'kannokanno/previm'
+" NeoBundle 'kannokanno/previm'
 " for browser
-NeoBundle 'tyru/open-browser.vim'
+" NeoBundle 'tyru/open-browser.vim'
 " for Eclim
 "NeoBundle 'ervandew/eclim', {'build': {'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.2/eclipse -Dvim.files='.escape(expand('~/.vim/bundle/eclim'), '')}}
 " for tcomment_vim
-NeoBundle 'tomtom/tcomment_vim'
+" NeoBundle 'tomtom/tcomment_vim'
 " for syntastic check 
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
 " for surround
-NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-surround'
 " for iedi
 "NeoBundle 'davidhalter/jedi-vim'
 " for YankRing
-NeoBundle 'vim-scripts/YankRing.vim'
+" NeoBundle 'vim-scripts/YankRing.vim'
 " for pep8 indent
-NeoBundle 'hynek/vim-python-pep8-indent'
+" NeoBundle 'hynek/vim-python-pep8-indent'
 " for julia-vim
-NeoBundle 'JuliaLang/julia-vim'
+" NeoBundle 'JuliaLang/julia-vim'
 " for vim-go
-NeoBundle 'fatih/vim-go'
+" NeoBundle 'fatih/vim-go'
 " for rust.vim
-NeoBundle 'rust-lang/rust.vim'
+" NeoBundle 'rust-lang/rust.vim'
 
 
 call neobundle#end()
@@ -103,9 +103,9 @@ noremap <C-n> :Unite -buffer-name=file file<CR>
 noremap <C-z> :Unite file_mru<CR>
 
 "NERDTree setting
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
-autocmd VimEnter * execute 'NERDTree'
+" nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" let NERDTreeShowHidden = 1
+" autocmd VimEnter * execute 'NERDTree'
 
 "fugitive setting
 autocmd QuickFIxCmdPost *grep* cwindow
