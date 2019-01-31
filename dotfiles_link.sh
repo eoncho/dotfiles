@@ -239,8 +239,20 @@ if [ $# -gt 0 ]; then
       sudo touch /etc/exports
     fi
   elif [ $1 = "ubuntu" ]; then 
-    echo "ubuntu setting start"
-    echo "no settings now"
+    echo "----***---- ubuntu setting start ----***----"
+    if [ $# -gt 1 ]; then
+      if [ $2 = "dev" ]; then
+        # for rust
+        if ! which rustup > /dev/null ; then
+          curl https://sh.rustup.rs -sSf | sh      
+        fi
+        # for scalaenv
+        if ! which scalaenv > /dev/null ; then
+          git clone git://github.com/mazgi/scalaenv.git ~/.scalaenv
+        fi
+      fi
+    fi
+    sudo apt install zsh
   fi
   for e in ${CONFS[@]}; do
     ln -sf `pwd`"/"${e} ~/${e}
