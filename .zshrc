@@ -166,3 +166,7 @@ export EDITOR=vim
 export SPARK_HOME=
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# for jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

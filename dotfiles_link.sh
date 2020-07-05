@@ -86,6 +86,7 @@ if [ $# -gt 0 ]; then
     brew cask install freemind
     brew cask install kindle
     brew cask install multifirefox
+    brew cask install typora
 
     if [ $# -gt 1 ]; then
       if [ $2 = "dev" ]; then
@@ -159,6 +160,7 @@ if [ $# -gt 0 ]; then
         brew cask install pgadmin4
         brew cask install atom
         brew cask install intellij-idea-ce 
+        brew cask install netbeans
         
         brew unlink mysql-connector-c
         brew install https://raw.github.com/mroonga/homebrew/master/mroonga.rb --use-homebrew-mysql 
