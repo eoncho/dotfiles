@@ -77,6 +77,7 @@ if [ $# -gt 0 ]; then
     brew install automake
     brew install p7zip
     brew install reattach-to-user-namespace
+    brew install unrar
 
     brew cask install iterm2
     brew cask install firefox
