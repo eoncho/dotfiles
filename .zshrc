@@ -148,7 +148,11 @@ fi
 if ! which rustc > /dev/null ; then source ~/.cargo/env; fi
  
 # for android
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PARH=$ANDROID_HOME/sdk/tools/bin:$PATH
+# for flutter
+export PATH=$HOME/develop/flutter/bin:$PATH
 # for gohome
 export GOPATH=$HOME/work/go
 # for nodebrew
